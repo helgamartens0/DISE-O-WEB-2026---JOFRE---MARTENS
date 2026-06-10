@@ -1,0 +1,177 @@
+/* ══════════════════════════════════════════════
+   SECCIÓN ARTISTAS
+══════════════════════════════════════════════ */
+
+.seccion-artistas {
+    padding: 3rem 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.artistas-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.seccion-artistas h2 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 0;
+    color: #000;
+}
+
+.select-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.select-wrapper::after {
+    content: '∨';
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    font-size: 0.7rem;
+    color: #555;
+}
+
+.select-ordenar {
+    border: 1px solid #ccc;
+    background: transparent;
+    padding: 6px 28px 6px 12px;
+    font-size: 0.82rem;
+    border-radius: 4px;
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    letter-spacing: 0.3px;
+    color: #555;
+    outline: none;
+    font-family: inherit;
+}
+
+.select-ordenar:focus {
+    border-color: #000;
+}
+
+/* Layout: descripción izq + grilla der */
+.artistas-layout {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+/* Columna descripción */
+.col-descripcion .subtitulo {
+    font-size: 0.8rem;
+    color: #888;
+    margin-bottom: 0.75rem;
+}
+
+.col-descripcion .cuerpo {
+    font-size: 0.85rem;
+    line-height: 1.7;
+    color: #333;
+}
+
+/* Grilla de artistas: 4 por fila */
+.grilla-artistas {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.2rem;
+}
+
+/* Tarjeta artista */
+.card-artista {
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    color: #000;
+}
+
+.card-artista img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.card-artista:hover img {
+    opacity: 0.85;
+}
+
+.card-artista .nombre {
+    margin-top: 0.6rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #000;
+}
+
+/* Botón Ver todos */
+.ver-todos-wrapper {
+    text-align: center;
+    margin-top: 2.5rem;
+}
+
+.btn-ver-todos {
+    display: inline-block;
+    background-color: #000;
+    color: #fff;
+    padding: 14px 45px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: opacity 0.2s;
+}
+
+.btn-ver-todos:hover {
+    opacity: 0.75;
+    color: #fff;
+}
+
+/* Skeleton loader */
+.skeleton {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.2s infinite;
+}
+
+@keyframes shimmer {
+    0%   { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+.skeleton-img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+}
+
+.skeleton-text {
+    height: 12px;
+    width: 50%;
+    margin: 0.6rem auto 0;
+    border-radius: 4px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+    .artistas-layout {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .grilla-artistas {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

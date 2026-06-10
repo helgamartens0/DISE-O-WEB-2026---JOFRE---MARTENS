@@ -1,0 +1,1205 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  background-color: #fdfbf9;
+  font-family:  Arial, sans-serif !important;
+  font-size: 16px;
+  line-height: 1.5;
+  box-sizing: border-box;
+}
+
+.sin-buscador .buscador-wrapper{
+    display: none;
+}
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center !important; 
+  /* 🌟 Bajamos el padding a 12px arriba/abajo para lograr la barra fina y estilizada */
+  padding: 12px 20px !important; 
+  background-color: #f7f1e9;
+  position: sticky;
+  top: 0;
+  z-index: 1050;
+  box-sizing: border-box;
+}
+.logo {
+  font-family: "Times New Roman", serif !important;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0 !important; /* 🌟 Reseteamos a 0 para que no empuje el contenedor hacia abajo */
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0 !important; /* 🌟 Quitamos márgenes residuales que puedan heredar de Bootstrap */
+  padding: 0;
+}
+.nav-acciones {
+    display: flex;
+    align-items: center !important; /* 👈 Clava el buscador y el bolso en el centro entre sí */
+    gap: 15px;
+}
+
+.nav-buscador {
+  display: flex;
+  align-items: center !important; /* 👈 Clava el menú de palabras y las acciones en la misma línea */
+  gap: 30px; 
+}
+.buscador-wrapper {
+    position: relative;
+    display: inline-block;
+    margin-top: 0 !important; /* 👈 Ponemos el margen en 0 */
+}
+
+.buscador-input {
+    width: 200px !important;       /* 🌟 Controla el ancho para que no se estire feo */
+    height: 40px !important;        /* 🌟 Le da una altura fina y estilizada */
+    padding: 6px 35px 6px 12px !important;
+    border: 1px solid #ccc !important; /* 🌟 Un borde gris suave como el de artistas */
+    border-radius: 20px !important; /* 🌟 ¡Acá está la magia de las puntas redondeadas! */
+    outline: none !important;
+    background-color: #fff !important;
+    font-size: 0.85rem !important;
+    transition: all 0.2s ease;
+}
+
+/* Efecto opcional para cuando haces click en el buscador */
+.buscador-input:focus {
+    border-color: #000 !important; /* El borde se oscurece delicadamente */
+}
+.btn-lupa {
+    position: absolute;
+    right: 10px !important;   /* 🌟 La arrima bien al borde derecho interno */
+    top: 50% !important;
+    transform: translateY(-50%) !important; /* 🌟 La centra verticalmente a la perfección */
+    background: transparent !important;
+    border: none !important;
+    cursor: pointer;
+    padding: 0 !important;
+    display: flex;
+    align-items: center;
+    color: #666 !important;   /* Un color gris para que combine */
+}
+.btn-bolso {
+    background: transparent !important;
+    border: none !important;
+    cursor: pointer;
+    padding: 0 !important;
+    display: flex;
+    align-items: center;
+    color: #000 !important;
+    margin-top: 0 !important; /* 🌟 Evita que se caiga o suba */
+}
+
+.menu li {
+  position: relative;
+  font-family: inherit;
+}
+
+.menu a {
+  font-family: "Times New Roman", serif !important; /* 👈 AGREGAR ESTO */
+  text-decoration: none;
+  color: black;
+  padding: 8px;
+}
+
+/* submenu oculto */
+.submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  list-style: none;
+  background-color: #fff; /* 👈 Asegura un fondo blanco sólido (o usá #f7f1e9 si elegiste el crema) */
+  padding: 15px;
+  min-width: 200px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2 columnas */
+  gap: 10px;
+  
+  z-index: 1000; /* 👈 ESTO hace que flote por encima del buscador y de cualquier otra cosa */
+}
+.submenu li a {
+  font-family: "Times New Roman", serif !important; /* 👈 AGREGAR ESTO */
+}
+/* ocultar correctamente */
+.dropdown .submenu {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: 0.3s;
+}
+
+/* mostrar */
+.dropdown:hover .submenu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.buscador {
+  padding: 8px 35px 8px 10px; /* espacio a la derecha para el icono */
+}
+
+.icono {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none; /* para que no moleste al escribir */
+}
+a:hover {
+  color: #e24949; /* cambia de color (puedes elegir el que quieras) */
+}
+
+.galeria {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: 200px 200px;
+  gap: 10px 15px;
+  max-width: 900px;
+  width: 100%;
+  margin: 50px auto;
+  padding: 0 10px;
+}
+.geleriaa{
+  display:grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: 300px 300px;
+  gap: 10px 15px;
+  max-width: 900px;
+  width: 100%;
+  margin: 50px auto;
+  padding: 0 10px;
+}
+/* Imagen grande */
+.img-grande {
+  grid-row: 1 / 3;
+  grid-column: 1 / 2;
+}
+.img-loco{
+grid-row :1/2;
+grid-column: 1/2;
+}
+/* Posición de las pequeñas */
+.img-pequena:nth-child(2) {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.img-pequena:nth-child(3) {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+.img-pequena:nth-child(4) {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.img-pequena:nth-child(5) {
+  grid-column: 3;
+  grid-row: 2;
+}
+
+.galeria img {
+  width: 90%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+/* =========================================
+   FOOTER
+========================================= */
+.footer {
+  background-color: #fce4e6;
+  padding: 35px 40px 0;
+  margin-top: auto;
+  width: 100%;
+  box-sizing: border-box;
+  border-top: 1px solid #f3cbd0;
+}
+
+.footer-contenido {
+  display: grid;
+  grid-template-columns: 1fr 1.8fr 1fr;
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+  align-items: start;
+}
+
+.footer-col h3 {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+  color: #111;
+  font-weight: 700;
+}
+
+.footer-col p {
+  margin: 5px 0;
+  font-size: 13px;
+  color: #666;
+  line-height: 1.6;
+}
+
+.footer-col-mapa iframe {
+  width: 100%;
+  height: 145px;
+  border: 0;
+  border-radius: 6px;
+  display: block;
+  margin-top: 4px;
+  filter: saturate(0.75);
+}
+
+.footer-col-links {
+  text-align: right;
+}
+
+.footer-nav-link {
+  display: block;
+  color: #666;
+  text-decoration: none;
+  font-size: 13px;
+  margin: 5px 0;
+  transition: color 0.25s;
+}
+
+.footer-nav-link:hover {
+  color: #e24949;
+}
+
+.footer-copy {
+  text-align: center;
+  margin-top: 25px;
+  border-top: 1px solid #f3cbd0;
+  padding: 10px 0;
+  font-size: 11px;
+  color: #aaa;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+  .footer-contenido {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    text-align: center;
+  }
+  .footer-col-links {
+    text-align: center;
+  }
+  .footer-nav-link {
+    display: inline-block;
+    margin: 3px 8px;
+  }
+}
+.titulo-categoria{
+    font-size: 32px;
+    font-family: "Times New Roman", serif;
+    font-weight: 300;
+    color: #6b6b6b;
+    
+    margin-left: 40px;
+    margin-top: 20px;
+    margin-bottom: 25px;
+
+    text-align: left;
+}
+
+/* 1. Resetear el contenedor para que no estire a los hijos */
+/* =========================================
+   GALERÍA DE TARJETAS (UNIFICADO Y SEGURO)
+========================================= */
+
+/* El contenedor principal de los resultados */
+.galeria-contenedor, #contenedor-obras {
+    display: grid !important;
+    /* auto-fill mantiene el tamaño rígido de 280px */
+    grid-template-columns: repeat(auto-fill, 280px) !important;
+    
+    /* --- ESTA LÍNEA CENTRA LAS TARJETAS EN LA PANTALLA --- */
+    justify-content: center !important; 
+    
+    gap: 2rem !important;
+    padding: 2rem;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto; /* Centra el contenedor principal */
+    box-sizing: border-box;
+}
+
+/* Tarjeta Bootstrap card con estilo del sitio */
+.tarjeta-arte {
+    width: 280px !important;
+    min-width: 280px !important;
+    max-width: 280px !important;
+    overflow: hidden;
+    border: 1px solid #f0e8df !important;
+    border-radius: 8px !important;
+    box-sizing: border-box;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: aparecer 0.5s ease-out forwards;
+}
+
+.tarjeta-arte .card-img-top {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+}
+
+.tarjeta-arte:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08) !important;
+}
+
+.tarjeta-arte-titulo {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #000;
+}
+
+.tarjeta-arte-texto {
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.tarjeta-arte-boton {
+    background-color: #000;
+    color: #fff !important;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 8px 16px;
+    border: none;
+    transition: background-color 0.2s ease;
+}
+
+.tarjeta-arte-boton:hover {
+    background-color: #333;
+    color: #fff !important;
+}
+
+.tarjeta-solo-exhibicion {
+    display: inline-block;
+    padding: 5px 14px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    color: #888;
+    letter-spacing: 0.5px;
+}
+
+.oculta {
+    display: none !important;
+}
+
+.tarjeta-arte.oculto {
+    transform: scale(0.8);
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); 
+}
+/* =========================================
+   PRODUCTO
+========================================= */
+
+.producto-container{
+    width: 100%;
+    max-width: 1200px;
+
+    margin: 50px auto;
+
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+
+    gap: 70px;
+
+    padding: 0 30px;
+}
+
+/* IMAGEN */
+
+.producto-imagen img{
+    width: 100%;
+    height: 500px;
+
+    object-fit: cover;
+
+    border-radius: 6px;
+}
+
+.descripcion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 20px;
+
+    margin-top: 25px;
+
+    font-size: 22px;
+}
+
+.corazon{
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* INFO DERECHA */
+
+.producto-info{
+    display: flex;
+    flex-direction: column;
+}
+
+.producto-info h2{
+    font-size: 38px;
+    font-weight: 400;
+
+    margin-bottom: 15px;
+}
+
+.producto-info h3{
+    font-size: 30px;
+    font-weight: 300;
+
+    margin-bottom: 30px;
+}
+
+/* WISHLIST */
+
+.wishlist-btn{
+    width: 100%;
+
+    background: #eee5d8;
+
+    border: none;
+
+    padding: 15px;
+
+    margin-bottom: 35px;
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+    transition: 0.3s;
+}
+
+.wishlist-btn:hover{
+    background: #e4d8c8;
+}
+
+/* OPCIONES */
+
+.grupo-opciones{
+    margin-bottom: 30px;
+}
+
+.grupo-opciones p{
+    margin-bottom: 12px;
+
+    font-size: 22px;
+}
+
+.opciones{
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.opciones button{
+    padding: 10px 24px;
+
+    border: 1px solid black;
+
+    border-radius: 30px;
+
+    background: white;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.opciones button:hover{
+    background: black;
+    color: white;
+}
+
+/* CARRITO */
+
+.carrito-box{
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    margin-top: 20px;
+}
+
+.stock-box{
+    background: #eee5d8;
+
+    padding: 15px 25px;
+
+    font-size: 18px;
+}
+
+.carrito-btn{
+    flex: 1;
+
+    background: black;
+
+    color: white;
+
+    border: none;
+
+    padding: 18px;
+
+    border-radius: 40px;
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+    transition: 0.3s;
+}
+
+.carrito-btn:hover{
+    opacity: 0.85;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media(max-width: 900px){
+
+    .producto-container{
+        grid-template-columns: 1fr;
+    }
+
+    .producto-imagen img{
+        height: auto;
+    }
+
+    .header{
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .nav-buscador{
+        flex-direction: column;
+    }
+
+    .footer-contenido{
+        flex-direction: column;
+        height: auto;
+
+        gap: 30px;
+
+        padding: 20px;
+    }
+
+}
+/* Estilo base para todos tus botones de opciones */
+.btn-opcion {
+  padding: 8px 18px;
+  border: 1px solid #000;
+  border-radius: 20px;
+  background-color: #fff;
+  color: #000;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+/* Estilo que se aplicará "fijado" con JavaScript */
+.btn-opcion.activo {
+  background-color: #000; /* Fondo negro */
+  color: #fff;            /* Texto blanco */
+}
+/* Estilos para el Formulario de Reserva */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.input-row {
+  display: flex;
+  gap: 15px;
+}
+
+#form-reserva label {
+  font-size: 14px;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+#form-reserva input[type="text"],
+#form-reserva input[type="email"],
+#form-reserva select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 14px;
+  outline: none;
+}
+
+#form-reserva input:focus,
+#form-reserva select:focus {
+  border-color: #000;
+}
+
+.btn-reserva {
+  background: black;
+  color: white;
+  border: none;
+  padding: 15px;
+  width: 100%;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+  transition: background 0.2s ease;
+}
+
+.btn-reserva:hover {
+  background: #333;
+}
+/* =========================================
+   RESPONSIVE (Ajustes para cualquier celular)
+========================================= */
+@media(max-width: 900px){
+
+    .producto-container{
+        grid-template-columns: 1fr;
+    }
+
+    .producto-imagen img{
+        height: auto;
+    }
+
+    .header{
+        flex-direction: column;
+        gap: 20px;
+        padding: 15px 10px; /* Un poco más de aire en móviles */
+    }
+
+    .nav-buscador{
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+    }
+
+    .menu {
+        padding: 0;
+        justify-content: center; /* Centra los botones de Inicio, Colecciones, etc. */
+        gap: 15px; /* Achicamos un pelín el espacio para que entre en pantallas chicas sin romperse */
+    }
+
+    /* ✨ MEJORAS DE DISEÑO PREMIUM PARA EL SUBMENÚ EN MÓVILES ✨ */
+    .dropdown .submenu {
+        left: 50%; /* Lo mueve al centro del botón Colecciones */
+        grid-template-columns: 1fr; /* Pasa a 1 sola columna: mucho más limpio y fácil de leer */
+        min-width: 160px;
+        text-align: center;
+        /* Mantenemos tu animación vertical incorporando el centrado horizontal (-50%) */
+        transform: translateX(-50%) translateY(10px); 
+    }
+
+    /* Mostrar correctamente con la animación combinada */
+    .dropdown:hover .submenu {
+        transform: translateX(-50%) translateY(0);
+    }
+
+    .footer-contenido{
+        flex-direction: column;
+        height: auto;
+        gap: 30px;
+        padding: 20px;
+    }
+}
+
+/* =========================================
+   HEADER — ACCIONES (buscador + bolso)
+========================================= */
+
+.nav-acciones {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.buscador-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.buscador-input {
+    padding: 5px 35px 5px 10px;
+    border: 1px solid #000;
+    border-radius: 4px;
+    height: 35px;
+    outline: none;
+    font-family: inherit;
+}
+
+.btn-lupa {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    color: #000;
+}
+
+.btn-bolso {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    color: #000;
+}
+
+/* =========================================
+   PÁGINA VER — artista vinculado
+========================================= */
+
+#artista-nombre {
+    font-size: 0.88rem;
+    color: #888;
+    margin: -10px 0 18px;
+    letter-spacing: 0.3px;
+}
+
+.artista-link {
+    color: #000;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+/* =========================================
+   FORMU — aviso esculturas
+========================================= */
+
+.aviso-visita {
+    background: #faf6f2;
+    border-left: 3px solid #e8d4c0;
+    padding: 1rem 1.2rem;
+    margin-bottom: 1.5rem;
+    border-radius: 4px;
+}
+
+.aviso-visita-titulo {
+    margin: 0 0 0.4rem;
+    font-size: 0.9rem;
+    color: #333;
+    font-weight: 600;
+}
+
+.aviso-visita-texto {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #666;
+    line-height: 1.75;
+}
+
+/* =========================================
+   INDEX — sección hero
+========================================= */
+
+.hero-seccion {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 60px;
+}
+
+.hero-titulo {
+    font-size: 48px;
+    letter-spacing: 5px;
+    margin-bottom: 20px;
+    font-weight: normal;
+    color: #000;
+}
+
+.hero-boton {
+    display: inline-block;
+    background-color: #000;
+    color: #fff;
+    padding: 12px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: opacity 0.3s;
+}
+
+.hero-boton:hover {
+    opacity: 0.75;
+    color: #fff;
+}
+
+/* =========================================
+   SUBTÍTULO CATEGORÍA (esculturas, etc.)
+========================================= */
+
+.subtitulo-categoria {
+    font-size: 0.88rem;
+    color: #888;
+    margin: -15px 0 20px 40px;
+    font-style: italic;
+}
+
+/* =========================================
+   PÁGINA DE PAGOS
+========================================= */
+
+.pagos-contenedor {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.pagos-resumen-lista {
+    margin-bottom: 20px;
+}
+
+.pagos-envios {
+    background: #f9f9f9;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+}
+
+.pagos-envios-titulo {
+    margin-top: 0;
+    font-size: 18px;
+}
+
+.pagos-envio-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+.pagos-envio-label:last-of-type {
+    margin-bottom: 0;
+}
+
+.pagos-envio-info {
+    font-size: 13px;
+    color: #666;
+}
+
+.pagos-totales {
+    border-top: 2px solid #000;
+    padding-top: 20px;
+    font-size: 16px;
+}
+
+.pagos-total-fila {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.pagos-total-final {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 15px;
+    margin-bottom: 0;
+}
+
+.pagos-btn-finalizar {
+    background: #000;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    width: 100%;
+    cursor: pointer;
+    font-size: 16px;
+    transition: opacity 0.2s;
+}
+
+.pagos-btn-finalizar:hover {
+    opacity: 0.85;
+}
+
+.pagos-fila {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding: 15px 0;
+}
+
+.pagos-fila-info {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.pagos-fila-img {
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.pagos-fila-nombre {
+    font-size: 16px;
+}
+
+.pagos-fila-cantidad {
+    color: #666;
+}
+
+.pagos-fila-config {
+    margin: 5px 0 0;
+    font-size: 13px;
+    color: #888;
+}
+
+.pagos-fila-acciones {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.pagos-btn-eliminar {
+    background: none;
+    border: none;
+    color: #ff4d4d;
+    cursor: pointer;
+    font-size: 14px;
+}
+ /* ESTOS ESTILOS LOS PODES TRASLADAR A TU ARCHIVO .CSS EXTERNO */
+        .seccion-reserva {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            padding: 60px 0;
+        }
+
+        .card-reserva {
+            background-color: #fff;
+            border: none;
+            border-radius: 12px;
+            padding: 2.5rem 3rem;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
+        }
+
+        .titulo-reserva {
+            font-size: 1.6rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 0.3rem;
+            color: #000;
+        }
+
+        .form-label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #555;
+            margin-bottom: 0.3rem;
+        }
+
+        .form-control, .form-select {
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            padding: 0.6rem 0.9rem;
+            background-color: #ffffff !important;
+            color: #000;
+            transition: border-color 0.2s;
+            width: 100%;
+        }
+
+        .form-control:focus, .form-select:focus {
+            border-color: #000;
+            box-shadow: none;
+            background-color: #fff;
+            outline: none;
+        }
+
+        .form-label:has(+ input[required])::after,
+        .form-label:has(+ select[required])::after {
+            content: " *";
+            color: #e24949;
+        }
+
+        .separador {
+            border: none;
+            border-top: 1px solid #f0e8df;
+            margin: 1.5rem 0;
+        }
+
+        .btn-confirmar {
+            background-color: #000;
+            color: #fff;
+            border: none;
+            border-radius: 50px;
+            padding: 12px 45px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: opacity 0.2s;
+            width: 100%;
+            cursor: pointer;
+        }
+
+        .btn-confirmar:hover {
+            opacity: 0.8;
+            color: #fff;
+        }
+
+        /* Estilos para los textos de error debajo de los campos */
+        .error-feedback {
+            font-size: 0.8rem;
+            color: #e24949;
+            margin-top: 0.25rem;
+            display: none;
+        }
+
+/* ══════════════════════════════════════════════
+   MENÚ HAMBURGUESA (RESPONSIVE)
+══════════════════════════════════════════════ */
+
+.btn-hamburguesa {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.btn-hamburguesa span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background-color: #000;
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+@media (max-width: 768px) {
+
+    .btn-hamburguesa {
+        display: flex;
+    }
+
+    /* Animación → X al abrir */
+    .nav.menu-abierto .btn-hamburguesa span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+    .nav.menu-abierto .btn-hamburguesa span:nth-child(2) {
+        opacity: 0;
+    }
+    .nav.menu-abierto .btn-hamburguesa span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* Panel desplegable */
+    .nav-buscador {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #f7f1e9;
+        padding: 16px 20px 24px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        z-index: 999;
+    }
+
+    .nav.menu-abierto .nav-buscador {
+        display: flex;
+    }
+
+    /* Menú vertical */
+    .menu {
+        flex-direction: column;
+        gap: 0;
+        width: 100%;
+    }
+
+    .menu a {
+        padding: 10px 8px;
+        display: block;
+    }
+
+    /* Buscador full width en mobile */
+    .nav-acciones {
+        width: 100%;
+    }
+
+    .buscador-wrapper {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .buscador-input {
+        width: 100% !important;
+    }
+
+    /* Submenu "Colecciones" en mobile */
+    .submenu {
+        position: static !important;
+        box-shadow: none !important;
+        padding: 4px 0 4px 16px !important;
+        min-width: unset !important;
+        grid-template-columns: 1fr !important;
+        z-index: auto !important;
+        background: transparent !important;
+        display: none !important;
+    }
+
+    .dropdown .submenu {
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+        transition: none !important;
+    }
+
+    .dropdown.abierto .submenu {
+        display: grid !important;
+    }
+}

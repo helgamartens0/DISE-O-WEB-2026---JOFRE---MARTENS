@@ -1,0 +1,61 @@
+.seccion-contacto {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    padding: 60px 0;
+}
+
+.card-contacto {
+    background-color: #fff;
+    border: none;
+    border-radius: 12px;
+    padding: 2.5rem 3rem;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
+}
+
+.titulo-contacto {
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 0.3rem;
+    color: #000;
+}
+
+.subtitulo-contacto {
+    font-size: 0.85rem;
+    color: #888;
+    margin-bottom: 2rem;
+}
+
+.btn-enviar {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    padding: 12px 45px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: opacity 0.2s;
+    width: 100%;
+}
+
+.btn-enviar:hover {
+    opacity: 0.8;
+    color: #fff;
+}
+
+.separador {
+    border: none;
+    border-top: 1px solid #f0e8df;
+    margin: 1.5rem 0;
+}
+
+/* Asterisco en campos obligatorios */
+.form-label:has(+ input[required])::after,
+.form-label:has(+ textarea[required])::after {
+    content: " *";
+    color: #e24949;
+}

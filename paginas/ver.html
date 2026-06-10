@@ -1,0 +1,166 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../estilos/inicio.css">
+
+  <script src="../scripts/pmi.js" defer></script>
+  <title>Document</title>
+  <script src="../scripts/hamburguesa.js" defer></script>
+</head>
+
+<body class="sin-buscador">
+  <header class="header">
+    <h1 class="logo">MATIZ</h1>
+    <nav class="nav">
+      <div class="nav-buscador">
+        <ul class="menu">
+          <li><a href="index.html">Inicio</a></li>
+
+          <li class="dropdown">
+            <a href="categorias.html">Colecciones</a>
+            <ul class="submenu">
+              <li><a href="natuaraleza.html">Naturaleza</a></li>
+              <li><a href="ciudad.html">Ciudades</a></li>
+              <li><a href="fotografias.html">Fotografia</a></li>
+              <li><a href="animales.html">Animales</a></li>
+              <li><a href="esculturas.html">Esculturas</a></li>
+            </ul>
+          </li>
+
+          <li><a href="artistas.html">Artistas</a></li>
+          <li><a href="formu.html">Reservas</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+        <div class="nav-acciones">
+
+          <!-- CONTENEDOR DEL BUSCADOR Y LA LUPA -->
+          <!-- position: relative permite que la lupa se mueva libremente solo dentro de esta caja -->
+          <div class="buscador-wrapper">
+
+            <!-- Input del buscador -->
+            <!-- padding-right: 35px; asegura que el texto que escribas no se superponga con la lupa -->
+            <input id="buscador" type="text" placeholder="Buscar..." class="buscador-input">
+
+            <!-- Lupa (ahora es un botón dentro del input) -->
+            <!-- position: absolute la coloca a la derecha y centrada verticalmente -->
+            <button class="btn-lupa">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
+                viewBox="0 0 16 16">
+                <path
+                  d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+              </svg>
+            </button>
+
+          </div>
+
+          <!-- BOLSO CONVERTIDO EN BOTÓN -->
+          <!-- Al igual que la lupa, le quitamos el fondo (transparent) y el borde (none) -->
+          <button id="bolso" class="btn-bolso">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-handbag"
+              viewBox="0 0 16 16">
+              <path
+                d="M8 1a2 2 0 0 1 2 2v2H6V3a2 2 0 0 1 2-2m3 4V3a3 3 0 1 0-6 0v2H3.36a1.5 1.5 0 0 0-1.483 1.277L.85 13.13A2.5 2.5 0 0 0 3.322 16h9.355a2.5 2.5 0 0 0 2.473-2.87l-1.028-6.853A1.5 1.5 0 0 0 12.64 5zm-1 1v1.5a.5.5 0 0 0 1 0V6h1.639a.5.5 0 0 1 .494.426l1.028 6.851A1.5 1.5 0 0 1 12.678 15H3.322a1.5 1.5 0 0 1-1.483-1.723l1.028-6.851A.5.5 0 0 1 3.36 6H5v1.5a.5.5 0 1 0 1 0V6z" />
+            </svg>
+          </button>
+
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <br>
+  <div class="producto-container">
+
+    <!-- IZQUIERDA -->
+    <div class="producto-imagen">
+
+      <img id="imagen-producto">
+
+      <p id="descripcion"></p>
+
+    </div>
+
+    <!-- DERECHA -->
+    <div class="producto-info">
+
+      <h2 id="titulo"></h2>
+      <p id="artista-nombre"></p>
+
+      <h3 id="precio"></h3>
+
+      <div id="grupo-soporte">
+        <h4>Soporte</h4>
+        <button class="btn-opcion" data-valor="Canvas">Canvas</button>
+        <button class="btn-opcion" data-valor="Papel">Papel</button>
+      </div>
+
+      <div id="grupo-tamano">
+        <h4>Tamaño</h4>
+        <button class="btn-opcion" data-valor="30x45">30x45</button>
+        <button class="btn-opcion" data-valor="50x50">50x50</button>
+        <button class="btn-opcion" data-valor="70x70">70x70</button>
+      </div>
+
+      <div id="grupo-marco">
+        <h4>Marco</h4>
+        <button class="btn-opcion" data-valor="Blanco">Blanco</button>
+        <button class="btn-opcion" data-valor="Negro">Negro</button>
+        <button class="btn-opcion" data-valor="Madera">Madera</button>
+      </div>
+      <!-- CARRITO -->
+      <div class="carrito-box">
+
+        <div class="stock-box">
+          <button id="btn-menos"> - </button>
+          <span id="cantidad-display">1</span>
+          <button id="btn-mas"> + </button>
+        </div>
+
+        <button class="carrito-btn">
+          Agregar al carrito
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+  <footer class="footer">
+    <div class="footer-contenido">
+
+      <div class="footer-col">
+        <h3>Contacto</h3>
+        <p>Tom&aacute;s Jofre 954, San Luis</p>
+        <p>+54 266 456-7890</p>
+        <p>info@matiz.com</p>
+      </div>
+
+      <div class="footer-col footer-col-mapa">
+        <h3>Cómo llegar</h3>
+        <iframe
+          src="https://www.openstreetmap.org/export/embed.html?bbox=-66.38%2C-33.32%2C-66.30%2C-33.27&layer=mapnik&marker=-33.295%2C-66.339"
+          title="Ubicación MATIZ" loading="lazy"></iframe>
+      </div>
+
+      <div class="footer-col footer-col-links">
+        <h3>Navegación</h3>
+        <a href="index.html" class="footer-nav-link">Inicio</a>
+        <a href="categorias.html" class="footer-nav-link">Colecciones</a>
+        <a href="artistas.html" class="footer-nav-link">Artistas</a>
+        <a href="formu.html" class="footer-nav-link">Reservas</a>
+        <a href="contacto.html" class="footer-nav-link">Contacto</a>
+      </div>
+
+    </div>
+    <div class="footer-copy">
+      <p>© 2026 MATIZ - Todos los derechos reservados</p>
+    </div>
+  </footer>
+
+</body>
+
+</html>

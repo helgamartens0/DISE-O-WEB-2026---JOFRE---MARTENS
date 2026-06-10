@@ -1,0 +1,188 @@
+/* Breadcrumb */
+.breadcrumb-artista {
+    padding: 1rem 2rem;
+    font-size: 0.78rem;
+    color: #888;
+    letter-spacing: 0.5px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.breadcrumb-artista a {
+    color: #888;
+    text-decoration: none;
+}
+
+.breadcrumb-artista a:hover {
+    color: #000;
+}
+
+/* Sección perfil */
+.seccion-artista {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1rem 2rem 2rem;
+}
+
+.nombre-artista {
+    font-size: 2rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 2rem;
+    color: #000;
+}
+
+.artista-perfil {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 3rem;
+    align-items: start;
+    margin-bottom: 3rem;
+}
+
+.artista-foto img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.foto-caption {
+    font-size: 0.75rem;
+    color: #888;
+    margin-top: 0.5rem;
+    font-style: italic;
+}
+
+.bio-titulo {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: #000;
+}
+
+.bio-texto {
+    font-size: 0.9rem;
+    line-height: 1.85;
+    color: #444;
+}
+
+/* Sección obras */
+.seccion-obras {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem 4rem;
+}
+
+.obras-titulo {
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #000;
+    border-bottom: 1px solid #f0e8df;
+    padding-bottom: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.obras-nota {
+    font-size: 0.85rem;
+    color: #888;
+    font-style: italic;
+    margin-bottom: 1.5rem;
+    padding: 0.75rem 1rem;
+    background: #faf6f2;
+    border-left: 3px solid #e8d4c0;
+    border-radius: 4px;
+}
+
+.obras-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+.obra-card {
+    text-decoration: none;
+    color: #000;
+    display: block;
+    background: #fff;
+    border: 1px solid #f0e8df;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.obra-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    color: #000;
+}
+
+.obra-card img {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    display: block;
+    transition: opacity 0.2s;
+}
+
+.obra-card:hover img {
+    opacity: 0.92;
+}
+
+.obra-card-info {
+    padding: 1rem;
+}
+
+.obra-card-titulo {
+    font-size: 0.88rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.obra-card-precio {
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 0.1rem;
+}
+
+.obra-card-efectivo {
+    font-size: 0.75rem;
+    color: #555;
+    margin-bottom: 0.1rem;
+}
+
+.obra-card-cuotas {
+    font-size: 0.75rem;
+    color: #2a7a2a;
+    font-weight: 500;
+}
+
+.obra-exhibicion {
+    cursor: default;
+}
+
+.obra-exhibicion:hover {
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+.obra-card-exhibicion {
+    font-size: 0.8rem;
+    color: #888;
+    font-style: italic;
+    margin-top: 0.25rem;
+}
+
+@media (max-width: 768px) {
+    .artista-perfil {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .obras-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

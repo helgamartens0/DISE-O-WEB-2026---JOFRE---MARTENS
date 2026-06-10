@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MATIZ - Lili Gomez</title>
+    <link rel="stylesheet" href="../estilos/inicio.css">
+    <link rel="stylesheet" href="../estilos/artista.css">
+    <script src="../scripts/hamburguesa.js" defer></script>
+    <script src="../scripts/artista.js" defer></script>
+</head>
+
+<body class="sin-buscador" data-artista-id="3">
+
+    <header class="header">
+        <h1 class="logo">MATIZ</h1>
+        <nav class="nav">
+            <div class="nav-buscador">
+                <ul class="menu">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li class="dropdown">
+                        <a href="categorias.html">Colecciones</a>
+                        <ul class="submenu">
+                            <li><a href="natuaraleza.html">Naturaleza</a></li>
+                            <li><a href="ciudad.html">Ciudades</a></li>
+                            <li><a href="fotografias.html">Fotografias</a></li>
+                            <li><a href="animales.html">Animales</a></li>
+                            <li><a href="esculturas.html">Esculturas</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="artistas.html">Artistas</a></li>
+                    <li><a href="formu.html">Reservas</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+                <div class="nav-acciones">
+                    <div class="buscador-wrapper">
+                        <input id="buscador" type="text" placeholder="Buscar..." class="buscador-input">
+                        <button class="btn-lupa">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                viewBox="0 0 16 16">
+                                <path
+                                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                            </svg>
+                        </button>
+                    </div>
+                    <button id="bolso" class="btn-bolso">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                            viewBox="0 0 16 16">
+                            <path
+                                d="M8 1a2 2 0 0 1 2 2v2H6V3a2 2 0 0 1 2-2m3 4V3a3 3 0 1 0-6 0v2H3.36a1.5 1.5 0 0 0-1.483 1.277L.85 13.13A2.5 2.5 0 0 0 3.322 16h9.355a2.5 2.5 0 0 0 2.473-2.87l-1.028-6.853A1.5 1.5 0 0 0 12.64 5zm-1 1v1.5a.5.5 0 0 0 1 0V6h1.639a.5.5 0 0 1 .494.426l1.028 6.851A1.5 1.5 0 0 1 12.678 15H3.322a1.5 1.5 0 0 1-1.483-1.723l1.028-6.851A.5.5 0 0 1 3.36 6H5v1.5a.5.5 0 1 0 1 0V6z" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <nav class="breadcrumb-artista">
+        <a href="index.html">Inicio</a> /
+        <a href="artistas.html">Artistas</a> /
+        <span>Lili Gomez</span>
+    </nav>
+
+    <section class="seccion-artista">
+        <h1 class="nombre-artista">Lili Gomez</h1>
+        <div class="artista-perfil">
+            <div class="artista-foto">
+                <img src="../imagenes/caras_artistas/lili_gomez.jpeg" alt="Lili Gomez">
+            </div>
+            <div class="artista-bio">
+                <h2 class="bio-titulo">Sobre mí:</h2>
+                <p class="bio-texto">Lili Gomez nació en Rosario y pasó parte de su formación en Europa, experiencia que
+                    marcó de manera profunda su sensibilidad visual. Sus pinturas capturan la arquitectura efímera de
+                    las ciudades, especialmente los canales y reflejos que fragmentan la luz. Trabaja con óleo sobre
+                    tela privilegiando texturas densas y una paleta húmeda que evoca la nostalgia del viajero.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="seccion-obras">
+        <h2 class="obras-titulo">Obras</h2>
+        <div class="obras-grid"></div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-contenido">
+            <div class="footer-col">
+                <h3>Contacto</h3>
+                <p>Tom&aacute;s Jofre 954, San Luis</p>
+                <p>+54 266 456-7890</p>
+                <p>info@matiz.com</p>
+            </div>
+            <div class="footer-col footer-col-mapa">
+                <h3>Cómo llegar</h3>
+                <iframe
+                    src="https://www.openstreetmap.org/export/embed.html?bbox=-66.38%2C-33.32%2C-66.30%2C-33.27&layer=mapnik&marker=-33.295%2C-66.339"
+                    title="Ubicación MATIZ" loading="lazy"></iframe>
+            </div>
+            <div class="footer-col footer-col-links">
+                <h3>Navegación</h3>
+                <a href="index.html" class="footer-nav-link">Inicio</a>
+                <a href="categorias.html" class="footer-nav-link">Colecciones</a>
+                <a href="artistas.html" class="footer-nav-link">Artistas</a>
+                <a href="formu.html" class="footer-nav-link">Reservas</a>
+                <a href="contacto.html" class="footer-nav-link">Contacto</a>
+            </div>
+        </div>
+        <div class="footer-copy">
+            <p>© 2026 MATIZ - Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

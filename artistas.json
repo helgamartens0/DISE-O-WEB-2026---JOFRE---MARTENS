@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "nombre": "Claudia Golsal",
+    "imagen": "../imagenes/caras_artistas/claudia_golsal.jpeg",
+    "href": "claudiagolsal.html"
+  },
+  {
+    "id": 2,
+    "nombre": "Juana Manson",
+    "imagen": "../imagenes/caras_artistas/juana_manson.jpeg",
+    "href": "juanamanson.html"
+  },
+  {
+    "id": 3,
+    "nombre": "Lili Gomez",
+    "imagen": "../imagenes/caras_artistas/lili_gomez.jpeg",
+    "href": "liligomez.html"
+  },
+  {
+    "id": 4,
+    "nombre": "Ruperta Ruther",
+    "imagen": "../imagenes/caras_artistas/ruperta_ruther.jpeg",
+    "href": "rupertaruther.html"
+  },
+  {
+    "id": 5,
+    "nombre": "Thomas Alexander",
+    "imagen": "../imagenes/caras_artistas/thomas_alexander.jpeg",
+    "href": "thomasalexander.html"
+  },
+  {
+    "id": 6,
+    "nombre": "Ari Ferreira",
+    "imagen": "../imagenes/caras_artistas/ari_ferreira.jpeg",
+    "href": "ariferreira.html"
+  },
+  {
+    "id": 7,
+    "nombre": "Carmela Llanos",
+    "imagen": "../imagenes/caras_artistas/carmela_llanos.jpeg",
+    "href": "carmelallanos.html"
+  },
+  {
+    "id": 8,
+    "nombre": "Florencio Lopez",
+    "imagen": "../imagenes/caras_artistas/florencio_lopez.jpeg",
+    "href": "florenciolopez.html"
+  },
+  {
+    "id": 9,
+    "nombre": "Lando Dnunzio",
+    "imagen": "../imagenes/caras_artistas/lando_dnunzio.jpeg",
+    "href": "landodnunzio.html"
+  },
+  {
+    "id": 10,
+    "nombre": "Tamara Giardini",
+    "imagen": "../imagenes/caras_artistas/tamara_giardini.jpeg",
+    "href": "tamaragiardini.html"
+  },
+  {
+    "id": 11,
+    "nombre": "Victoria Vincens",
+    "imagen": "../imagenes/caras_artistas/victoria_vincens.jpeg",
+    "href": "victoriavincens.html"
+  }
+]
